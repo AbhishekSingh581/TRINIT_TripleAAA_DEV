@@ -52,6 +52,7 @@
     #contentInHeader-container h5{
         /* border: 1px solid red; */
         width: fit-content;
-        padding: clamp(1rem,1.5rem,2rem) 0;
+        padding: clamp(1rem,1.5rem,2rem) clamp(0.5rem,1rem,2rem);
+        font-size: 1rem;
     }
 }

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div id='header-container'>
       <NavBar/>
-      <div id="contentInHeader-container">
+      <div id="contentInHeader-container" data-aos="fade-up">
         <h1>Carbon Action Solution for <br></br> Internet Data Transfer</h1>
         <div id="videoBtnHeader">
             <button><ExtensionIcon id="videoPlayIcon"/></button>

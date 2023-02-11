@@ -23,10 +23,13 @@ const NavBar = () => {
             <li class="nav-item">
                 <a class="navBar-link" href="/">Blog</a>
             </li>
-            
             </ul>
-            
+            <div id="loginSignUp">
+                <button>Log In</button>
+                <button>Sign Up</button>
+            </div>
         </div>
+        
     </nav>
   )
 }

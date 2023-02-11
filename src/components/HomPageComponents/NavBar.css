@@ -26,7 +26,7 @@
 }
 #navbarSupportedContent{
     /* border: 1px solid green; */
-    padding: 0% 2%;
+    padding: 0% 5%;
 }
 
 #navbarSupportedContent ul{
@@ -42,4 +42,17 @@
 }
 .activeLink{
     color: #21de21;
+}
+#loginSignUp{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#loginSignUp button{
+    margin: 0% 1rem;
+    color: #fff;
+    padding: 0.2rem 1.5rem;
+    background-color: #21de21;
 }
