@@ -22,29 +22,33 @@
     color: #fff;
     padding: clamp(0.5rem,1rem,2rem);
     display: flex;
+    justify-content: space-between;
 }
-#contact-list h6{
-    /* border: 1px solid green; */
-    width: 100%;
-    font-weight: 400;
-    padding: 1%;
+.Lists{
+    /* border: 1px solid white; */
+}
+.Lists h5{
+    font-weight: 300;
+    color: #21de21;
+}
+.Lists h6{
+    font-weight: 200;
 }
 #mediaHandles{
-    display: flex;
     /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 1%;
-    justify-content: space-around;
-    width: 100%;
 }
-
+.handles{
+    /* border: 1px solid red; */
+    margin: 2%;
+}
 @media (max-width:480px) {
+    #mediaHandles{
+        flex-direction: row;
+    }
     #contact-list{
         flex-direction: column;
-    }
-    #mediaHandles{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
     }
 }
