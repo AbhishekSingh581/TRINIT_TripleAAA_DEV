@@ -25,8 +25,8 @@ const NavBar = () => {
             </li>
             </ul>
             <div id="loginSignUp">
-                <button>Log In</button>
-                <button>Sign Up</button>
+                <a href='/login'><button>Log In</button></a>
+                <a href='/register'><button>Sign Up</button></a>
             </div>
         </div>
         
