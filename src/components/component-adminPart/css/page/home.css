@@ -1,0 +1,11 @@
+.home{
+    flex: 4;
+    /* background: #1f1f1f; */
+    /* background-image: linear-gradient(to right, rgb(196, 241, 188), #21de21); */
+    z-index: -999;
+}
+
+.homeWidgets{
+    display: flex;
+    margin: 20px;
+}
