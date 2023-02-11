@@ -1,0 +1,10 @@
+#nav-container{
+    border: 1px solid red;
+    background: transparent;
+}
+#nav-container a{
+    color: aliceblue;
+}
+#navbarSupportedContent{
+    border: 1px solid green;
+}

@@ -1,0 +1,11 @@
+#header-container{
+    border: 1px solid blue;
+    background: linear-gradient(#0000006f,#0000006f), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+#contentInHeader-container{
+    border: 1px solid red;
+    padding: clamp(2rem,40vh + 1rem,20rem) 0;
+    color: #fff;
+}
