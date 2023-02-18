@@ -54,4 +54,8 @@ router.route("/logout").get(async(req,res)=>{
     res.status(200).end();
 })
 
+router.route('/helloMsg').get(async(req,res)=>{
+    res.send("hello");
+})
+
 export default router
