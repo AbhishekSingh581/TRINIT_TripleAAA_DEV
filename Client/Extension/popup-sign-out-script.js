@@ -8,7 +8,7 @@ document.querySelector('button').addEventListener('click',()=>{
 })
 
 chrome.storage.local.get(['user_info'], async function (response) {
-    const resp = await fetch('http://localhost:5000/api/v1/carbonInsight/userInfo', {
+    const resp = await fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/userInfo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

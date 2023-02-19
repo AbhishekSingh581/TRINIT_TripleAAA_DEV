@@ -22,7 +22,7 @@ chrome.browserAction.onClicked.addListener(function () {
 function ToServer(tab_info) {
     console.log(tab_info);
     fetch('')
-    return fetch('http://localhost:5000/api/v1/carbonInsight/tabInfo',{
+    return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/tabInfo',{
         method:"POST",
         headers: { 'Content-Type': 'application/json' },
         body:JSON.stringify(tab_info)
@@ -39,7 +39,7 @@ function ToServer(tab_info) {
 function flip_user_status(signIn,user_info){
     if(signIn){
         //fetch the localhost:3000/login route
-        return fetch('http://localhost:5000/api/v1/carbonInsight/login',{
+        return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/login',{
             method:'GET',
             headers:{
                 'Authorization':'Basic '+  btoa(`${user_info.email}:${user_info.password}`)
@@ -64,7 +64,7 @@ function flip_user_status(signIn,user_info){
                 if(chrome.runtime.lastError) resolve('fail');
                 
                 if(response.userStatus===undefined) resolve('fail')
-                fetch('http://localhost:5000/api/v1/carbonInsight/logout',{
+                fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/logout',{
                     method:'GET',
                     headers:{
                         'Authorization':'Basic'+  btoa(`${response.user_info.email}:${response.user_info.password}`)
@@ -89,7 +89,7 @@ async function callCarbonAPI(details) {
         if(details.url!='chrome-extension://*/*'){
 
             console.log(details.url);
-                await fetch('http://localhost:5000/api/v1/carbonInsight/tabInfo', {
+                await fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/tabInfo', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

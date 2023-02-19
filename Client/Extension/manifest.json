@@ -12,5 +12,10 @@
     "browser_action": {
     
     },
+    "icons": {
+      "16": "./logos/logo16.png",
+      "48": "./logos/logo48.png",
+      "128": "./logos/logo128.png"
+    },
     "manifest_version":2
   }
