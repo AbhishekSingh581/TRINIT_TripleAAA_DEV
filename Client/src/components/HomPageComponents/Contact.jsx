@@ -32,7 +32,7 @@ const Contact = () => {
         </div>
         <div className="Lists">
             <h5>Referances</h5>
-            <h6><a href="https://www.bbc.com/future/article/20200305-why-your-internet-habits-are-not">BBC</a></h6>
+              <a href="https://www.bbc.com/future/article/20200305-why-your-internet-habits-are-not">BBC</a>
             <h6><a href="https://sphera.com/blog/the-carbon-footprint-of-the-internet/">Sphera</a></h6>
             <h6><a href="https://sustainablewebdesign.org/calculating-digital-emissions/">Sustainablewebdesign</a></h6>
         </div>

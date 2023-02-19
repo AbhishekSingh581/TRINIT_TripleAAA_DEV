@@ -1,11 +1,47 @@
 import React from "react";
 import '../Pages/style.css';
 import BG from "../img/bg.svg";
-import Avatar from "../img/avatar.svg";
 import Wave from "../img/wave.png";
-
+import axios from 'axios'
+const registration=async(e)=>{
+        e.preventDefault();
+        const enteredEmail=document.getElementById('registrationEmail').value;
+        const enteredPassword=document.getElementById('registrationPassword').value;
+        const enteredCPassword=document.getElementById('registrationCPassword').value;
+        function postingToDB(email,Password) {
+                return fetch('http://localhost:5000/api/v1/carbonInsight/getRegistration',{
+                        method:'POST',
+                        headers:{
+                                'Authorization':'Basic '+  btoa(`${email}:${Password}`)
+                        }
+                }).then(res=>{
+                        return res;
+                }).catch(err=>{console.log(err)})
+        }
+        if (enteredPassword!=enteredCPassword) {
+                document.getElementById('Msg').innerText="* Password and Confirm Password are not matched."
+        }
+        else{
+                postingToDB(enteredEmail,enteredPassword)            
+                .then(res=>{
+                        console.log(res.status)
+                        if(res.status===200){
+                                document.getElementById('registrationForm').submit() 
+                        }   
+                        else{
+                                document.getElementById('Msg').innerText="* Email already exist , enter different email."  
+                        }            
+                })
+                .catch(err=>console.log(err))
+        }
+}
 const Register = (props) => {
-    return (
+        
+        // document.getElementById('registrationForm').addEventListener('submit',e=>{
+        //         e.preventDefault()
+        // })
+
+    return (            
         <div>
             <img class="wave" src={Wave} />
             <div class="container">
@@ -13,16 +49,14 @@ const Register = (props) => {
                     <img src={BG} />
                 </div>
                 <div class="login-content">
-                    <form action="index.html">
-                        <img src={Avatar} />
+                    <form id="registrationForm" method="get" action="/dashboard" onSubmit={registration}>
                         <h2 class="title">Welcome</h2>
                         <div class="input-div one">
                         <div class="i">
                                 <i class="fas fa-user"></i>
                         </div>
                         <div class="div">
-                                <h5>Username</h5>
-                                <input type="text" class="input" />
+                                <input type="text" id="registrationEmail" class="input" placeholder="Email" required/>
                         </div>
                         </div>
                         <div class="input-div pass">
@@ -30,20 +64,19 @@ const Register = (props) => {
                                 <i class="fas fa-lock"></i>
                         </div>
                         <div class="div">
-                                <h5>Password</h5>
-                                <input type="password" class="input" />
+                                <input type="password" id="registrationPassword" class="input" placeholder="Password" required/>
                         </div>
                         </div>
                         <div class="input-div pass">
                         <div class="i"> 
                                 <i class="fas fa-lock"></i>
                         </div>
-                        <div class="div">
-                                <h5>Confirm Password</h5>
-                                <input type="password" class="input" />
+                        <div class="div"> 
+                                <input type="password" id="registrationCPassword" class="input" placeholder="Confirm Password" required/>
                         </div>
                         </div>
-                        <input type="submit" class="btn" value="Sign up" />
+                        <span id="Msg"></span>
+                        <button id="submitBtn" type="submit">Sign up</button>
                     </form>
                 </div>
             </div>

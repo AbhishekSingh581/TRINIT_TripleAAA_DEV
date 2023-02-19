@@ -1,6 +1,6 @@
 import express from "express"
 import fetchCtrl from "./controller/fetchDetailsCtrl.js";
-
+import postCtrl from "./controller/postDetailCtrl.js";
 const router=express.Router()
 
 let userEmail;
@@ -56,6 +56,41 @@ router.route("/logout").get(async(req,res)=>{
 
 router.route('/helloMsg').get(async(req,res)=>{
     res.send("hello");
+})
+
+async function checkerDB(req,res,next) {
+    let creds=req.get('Authorization');
+    creds=creds.substr(creds.indexOf(' ')+1);
+    creds=Buffer.from(creds, 'base64').toString('binary')
+    creds=creds.split(':');
+    // console.log(creds);
+    try{
+        const data=await fetchCtrl.getUserDetails(creds);
+        // console.log(data);
+        if(data.length!=0){
+            // console.log("Already");
+            res.send(401).end()
+        }
+        else{
+            // console.log("Not exist");
+            try{
+                await postCtrl.postUserDetails(creds)
+            }
+            catch{
+                console.log("can't add user");
+            }
+            next();
+        }
+    }
+    catch{
+        console.log("Err");
+        res.send(401).end()
+    }
+}
+
+router.route('/getRegistration').post(checkerDB,async(req,res)=>{
+    // console.log(req.headers.authorization);
+    res.status(200).end();
 })
 
 export default router

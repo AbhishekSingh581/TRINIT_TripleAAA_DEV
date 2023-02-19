@@ -50,5 +50,6 @@
     }
     #contact-list{
         flex-direction: column;
+        justify-content: space-between;
     }
 }

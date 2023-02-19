@@ -34,4 +34,17 @@ export default class CarbonInsightDB{
             console.log("cant make it an array");
         }
     }
+    static async postUser(creds){
+        // let cursor
+        try{
+            await CarbonInsightUser.collection("UserDetail").insertOne({"email":creds[0],"password":creds[1]},(err,res)=>{
+                if (err) throw err;
+                console.log("1 document inserted");
+            })
+            // console.log(cursor);
+        }
+        catch{
+            // console.log("cant post the data");
+        }
+    }
 }

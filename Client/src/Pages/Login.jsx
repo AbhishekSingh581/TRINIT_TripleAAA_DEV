@@ -1,10 +1,10 @@
 import React from "react";
 import '../Pages/style.css';
 import BG from "../img/bg.svg";
-import Avatar from "../img/avatar.svg";
 import Wave from "../img/wave.png";
 
 const Login = (props) => {
+    
     return (
         <div>
             <img class="wave" src={Wave} />
@@ -14,15 +14,13 @@ const Login = (props) => {
                 </div>
                 <div class="login-content">
                     <form action="index.html">
-                        <img src={Avatar} />
                         <h2 class="title">Welcome</h2>
                         <div class="input-div one">
                         <div class="i">
                                 <i class="fas fa-user"></i>
                         </div>
                         <div class="div">
-                                <h5>Username</h5>
-                                <input type="text" class="input" />
+                                <input type="text" class="input" placeholder="Username" />
                         </div>
                         </div>
                         <div class="input-div pass">
@@ -30,8 +28,7 @@ const Login = (props) => {
                                 <i class="fas fa-lock"></i>
                         </div>
                         <div class="div">
-                                <h5>Password</h5>
-                                <input type="password" class="input" />
+                                <input type="password" class="input" placeholder="Password"/>
                         </div>
                         </div>
                         <a href="#">Forgot Password?</a>
