@@ -4,7 +4,7 @@ import BG from "../img/bg.svg";
 import Wave from "../img/wave.png";
 
 const loginToDB=(email,password)=>{
-    return fetch('http://localhost:5000/api/v1/carbonInsight/getLogin',{
+    return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getLogin',{
                 method:'POST',
                 headers:{
                         'Authorization':'Basic '+  btoa(`${email}:${password}`)
