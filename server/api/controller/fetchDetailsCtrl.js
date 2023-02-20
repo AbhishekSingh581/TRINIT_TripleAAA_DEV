@@ -12,4 +12,15 @@ export default class fetchCtrl {
             return []
         }
     }
+    static async getUserRegistration(creds){
+        try{
+            const feedslists=await CarbonInsightDAO.getUserforRegistration(creds)
+            // console.log(feedslists);
+            return feedslists
+        }
+        catch{
+            console.log("Can't fetch data");
+            return []
+        }
+    }
 }

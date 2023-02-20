@@ -9,7 +9,7 @@ const registration=async(e)=>{
         const enteredPassword=document.getElementById('registrationPassword').value;
         const enteredCPassword=document.getElementById('registrationCPassword').value;
         function postingToDB(email,Password) {
-                return fetch('http://localhost:5000/api/v1/carbonInsight/getRegistration',{
+                return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getRegistration',{
                         method:'POST',
                         headers:{
                                 'Authorization':'Basic '+  btoa(`${email}:${Password}`)

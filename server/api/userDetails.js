@@ -65,7 +65,7 @@ async function checkerDB(req,res,next) {
     creds=creds.split(':');
     // console.log(creds);
     try{
-        const data=await fetchCtrl.getUserDetails(creds);
+        const data=await fetchCtrl.getUserRegistration(creds);
         // console.log(data);
         if(data.length!=0){
             // console.log("Already");

@@ -34,6 +34,27 @@ export default class CarbonInsightDB{
             console.log("cant make it an array");
         }
     }
+    static async getUserforRegistration(creds){
+        let cursor
+        try{
+            // console.log(creds[0],creds[1]);
+            // console.log(typeof(creds[0]),typeof(creds[1]));
+            cursor=await CarbonInsightUser.collection("UserDetail").find({"email":creds[0]})
+            // console.log(cursor);
+        }
+        catch{
+            console.log("cant get the data");
+            return []
+        }
+        try{
+            const feedsList=await cursor.toArray()
+            // console.log(feedsList);
+            return feedsList
+        }
+        catch{
+            console.log("cant make it an array");
+        }
+    }
     static async postUser(creds){
         // let cursor
         try{
