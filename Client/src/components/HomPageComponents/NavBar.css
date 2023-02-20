@@ -54,5 +54,9 @@
     margin: 0% 1rem;
     color: #fff;
     padding: 0.2rem 1.5rem;
-    background-color: #21de21;
+    /* background-color: #21de21; */
+    background-image: linear-gradient(to right, #38d39f, #21de21, #21de21);
+}
+#loginSignUp button:hover{
+    background-position: left;
 }

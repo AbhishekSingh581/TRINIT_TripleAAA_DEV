@@ -2,22 +2,21 @@ import React from "react";
 import '../Pages/style.css';
 import BG from "../img/bg.svg";
 import Wave from "../img/wave.png";
-import axios from 'axios'
+function postingToDB(email,Password) {
+        return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getRegistration',{
+                method:'POST',
+                headers:{
+                        'Authorization':'Basic '+  btoa(`${email}:${Password}`)
+                }
+        }).then(res=>{
+                return res;
+        }).catch(err=>{console.log(err)})
+}
 const registration=async(e)=>{
         e.preventDefault();
         const enteredEmail=document.getElementById('registrationEmail').value;
         const enteredPassword=document.getElementById('registrationPassword').value;
         const enteredCPassword=document.getElementById('registrationCPassword').value;
-        function postingToDB(email,Password) {
-                return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getRegistration',{
-                        method:'POST',
-                        headers:{
-                                'Authorization':'Basic '+  btoa(`${email}:${Password}`)
-                        }
-                }).then(res=>{
-                        return res;
-                }).catch(err=>{console.log(err)})
-        }
         if (enteredPassword!=enteredCPassword) {
                 document.getElementById('Msg').innerText="* Password and Confirm Password are not matched."
         }
@@ -76,7 +75,7 @@ const Register = (props) => {
                         </div>
                         </div>
                         <span id="Msg"></span>
-                        <button id="submitBtn" type="submit">Sign up</button>
+                        <button className="submitBtn" type="submit">Sign up</button>
                     </form>
                 </div>
             </div>

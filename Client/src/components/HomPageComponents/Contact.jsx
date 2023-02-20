@@ -11,10 +11,10 @@ const Contact = () => {
       <div id='contact-list'>
         <div className="Lists">
             <div id="mediaHandles">
-                <WhatsAppIcon className='handles'/>
-                <TwitterIcon className='handles'/>  
-                <LinkedInIcon className='handles'/>  
-                <FacebookIcon className='handles'/>  
+                <a href="/"><WhatsAppIcon className='handles'/></a>
+                <a href=""><TwitterIcon className='handles'/>  </a>
+                <a href=""><LinkedInIcon className='handles'/> </a> 
+                <a href=""><FacebookIcon className='handles'/>  </a>
             </div>
         </div>
         <div className="Lists">

@@ -149,7 +149,7 @@ form{
 
 a{
 	display: block;
-	text-align: right;
+	/* text-align: right; */
 	text-decoration: none;
 	color: #999;
 	font-size: 0.9rem;
@@ -167,7 +167,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
@@ -223,4 +223,20 @@ a:hover{
 span{
 	color: red;
 	font-weight: 100;
+}
+.submitBtn{
+	color: white;
+	background: #32be8f;
+	border-style: none;
+	width: 100%;
+	padding: 1%;
+	margin: 2% auto;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	transition: 0.4s;
+}
+.submitBtn:hover{
+	transform: scale(1.08);
 }

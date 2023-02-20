@@ -19,7 +19,7 @@
 #contact-list{
     /* border: 1px solid red; */
     text-align: start;
-    color: #fff;
+    color: #747474;
     padding: clamp(0.5rem,1rem,2rem);
     display: flex;
     justify-content: space-between;
@@ -43,6 +43,9 @@
 .handles{
     /* border: 1px solid red; */
     margin: 2%;
+}
+.handles :hover{
+    color: #38d39f;
 }
 @media (max-width:480px) {
     #mediaHandles{

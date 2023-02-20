@@ -88,7 +88,14 @@ async function checkerDB(req,res,next) {
     }
 }
 
+
+
 router.route('/getRegistration').post(checkerDB,async(req,res)=>{
+    // console.log(req.headers.authorization);
+    res.status(200).end();
+})
+
+router.route('/getLogin').post(authenticate_user,async(req,res)=>{
     // console.log(req.headers.authorization);
     res.status(200).end();
 })
