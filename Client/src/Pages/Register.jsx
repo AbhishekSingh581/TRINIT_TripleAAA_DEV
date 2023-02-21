@@ -2,11 +2,11 @@ import React from "react";
 import '../Pages/style.css';
 import BG from "../img/bg.svg";
 import Wave from "../img/wave.png";
-function postingToDB(email,Password) {
-        return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getRegistration',{
+function postingToDB(name,email,Password) {
+        return fetch('http://localhost:5000/api/v1/carbonInsight/getRegistration',{
                 method:'POST',
                 headers:{
-                        'Authorization':'Basic '+  btoa(`${email}:${Password}`)
+                        'Authorization':'Basic '+  btoa(`${name}:${email}:${Password}`)
                 }
         }).then(res=>{
                 return res;
@@ -14,6 +14,7 @@ function postingToDB(email,Password) {
 }
 const registration=async(e)=>{
         e.preventDefault();
+        const enteredName=document.getElementById('registrationName').value;
         const enteredEmail=document.getElementById('registrationEmail').value;
         const enteredPassword=document.getElementById('registrationPassword').value;
         const enteredCPassword=document.getElementById('registrationCPassword').value;
@@ -21,7 +22,7 @@ const registration=async(e)=>{
                 document.getElementById('Msg').innerText="* Password and Confirm Password are not matched."
         }
         else{
-                postingToDB(enteredEmail,enteredPassword)            
+                postingToDB(enteredName,enteredEmail,enteredPassword)            
                 .then(res=>{
                         console.log(res.status)
                         if(res.status===200){
@@ -48,8 +49,16 @@ const Register = (props) => {
                     <img src={BG} />
                 </div>
                 <div class="login-content">
-                    <form id="registrationForm" method="get" action="/dashboard" onSubmit={registration}>
+                    <form id="registrationForm" method="get" action="/" onSubmit={registration}>
                         <h2 class="title">Welcome</h2>
+                        <div class="input-div one">
+                        <div class="i">
+                                <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                                <input type="text" id="registrationName" class="input" placeholder="Name" required/>
+                        </div>
+                        </div>
                         <div class="input-div one">
                         <div class="i">
                                 <i class="fas fa-user"></i>

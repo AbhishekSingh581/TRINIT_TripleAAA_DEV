@@ -39,7 +39,7 @@ export default class CarbonInsightDB{
         try{
             // console.log(creds[0],creds[1]);
             // console.log(typeof(creds[0]),typeof(creds[1]));
-            cursor=await CarbonInsightUser.collection("UserDetail").find({"email":creds[0]})
+            cursor=await CarbonInsightUser.collection("UserDetail").find({"email":creds[1]})
             // console.log(cursor);
         }
         catch{
@@ -58,7 +58,7 @@ export default class CarbonInsightDB{
     static async postUser(creds){
         // let cursor
         try{
-            await CarbonInsightUser.collection("UserDetail").insertOne({"email":creds[0],"password":creds[1]},(err,res)=>{
+            await CarbonInsightUser.collection("UserDetail").insertOne({"name":creds[0],"email":creds[1],"password":creds[2]},(err,res)=>{
                 if (err) throw err;
                 console.log("1 document inserted");
             })

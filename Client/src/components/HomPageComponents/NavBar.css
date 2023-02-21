@@ -1,6 +1,8 @@
 #nav-container{
+    position: fixed;
     /* border: 1px solid red; */
-    background: transparent;
+    width: 100%;
+    background: #000;
 }
 
 .navBar-link{

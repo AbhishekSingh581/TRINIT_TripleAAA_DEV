@@ -63,7 +63,7 @@ async function checkerDB(req,res,next) {
     creds=creds.substr(creds.indexOf(' ')+1);
     creds=Buffer.from(creds, 'base64').toString('binary')
     creds=creds.split(':');
-    // console.log(creds);
+    console.log(creds);
     try{
         const data=await fetchCtrl.getUserRegistration(creds);
         // console.log(data);
