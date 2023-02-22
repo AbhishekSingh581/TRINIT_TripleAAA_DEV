@@ -9,7 +9,7 @@ const Register = (props) => {
         const enteredPassword=useRef();
         const enteredCPassword=useRef();
         function postingToDB(name,email,Password) {
-                return fetch('http://localhost:5000/api/v1/carbonInsight/getRegistration',{
+                return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getRegistration',{
                         method:'POST',
                         headers:{
                                 'Authorization':'Basic '+  btoa(`${name}:${email}:${Password}`)
