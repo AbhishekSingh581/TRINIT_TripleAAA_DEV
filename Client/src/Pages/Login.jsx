@@ -2,36 +2,42 @@ import React from "react";
 import '../Pages/style.css';
 import BG from "../img/bg.svg";
 import Wave from "../img/wave.png";
+import { useRef } from "react";
 
-const loginToDB=(email,password)=>{
-    return fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getLogin',{
-                method:'POST',
-                headers:{
-                        'Authorization':'Basic '+  btoa(`${email}:${password}`)
-                }
-        }).then(res=>{
-                return res;
-        }).catch(err=>{console.log(err)})
-}
-
-const loginToDashBoard=(e)=>{
-    e.preventDefault();
-    const emailEntered=document.getElementById('emailEnteredInLogin').value;
-    const passwordEntered=document.getElementById('passwordEnteredInLogin').value
-    loginToDB(emailEntered,passwordEntered)            
-                .then(res=>{
-                        console.log(res.status)
-                        if(res.status===200){
-                                document.getElementById('loginForm').submit() 
-                        }   
-                        else{
-                                document.getElementById('MsgInLogin').innerText="* Email or password entered is wrong."  
-                        }            
-                })
-                .catch(err=>console.log(err))
-}
 
 const Login = (props) => {
+        const emailEntered=useRef();
+        const passwordEntered=useRef();
+        
+        const loginToDB=(email,password)=>{
+            return fetch('http://localhost:5000/api/v1/carbonInsight/getLogin',{
+                        method:'POST',
+                        headers:{
+                                'Authorization':'Basic '+  btoa(`${email}:${password}`)
+                        }
+                }).then(res=>{
+                        return res;
+                }).catch(err=>{console.log(err)})
+        }
+        
+        const loginToDashBoard=(e)=>{
+            e.preventDefault();
+        //     const emailEntered=document.getElementById('emailEnteredInLogin').value;
+        //     const passwordEntered=document.getElementById('passwordEnteredInLogin').value
+            loginToDB(emailEntered.current.value,passwordEntered.current.value)            
+                        .then(res=>{
+                                console.log(res.status)
+                                if(res.status===200){
+                                        localStorage.setItem("emailData",emailEntered.current.value);
+                                        localStorage.setItem("passwordData",passwordEntered.current.value)
+                                        document.getElementById('loginForm').submit() 
+                                }   
+                                else{
+                                        document.getElementById('MsgInLogin').innerText="* Email or password entered is wrong."  
+                                }            
+                        })
+                        .catch(err=>console.log(err))
+        }
     
     return (
         <div>
@@ -48,7 +54,7 @@ const Login = (props) => {
                                 <i class="fas fa-user"></i>
                         </div>
                         <div class="div">
-                                <input type="text" class="input" id="emailEnteredInLogin" placeholder="Email" />
+                                <input type="text" class="input" id="emailEnteredInLogin" placeholder="Email" ref={emailEntered}/>
                         </div>
                         </div>
                         <div class="input-div pass">
@@ -56,7 +62,7 @@ const Login = (props) => {
                                 <i class="fas fa-lock"></i>
                         </div>
                         <div class="div">
-                                <input type="password" class="input" id="passwordEnteredInLogin" placeholder="Password"/>
+                                <input type="password" class="input" id="passwordEnteredInLogin" placeholder="Password" ref={passwordEntered}/>
                         </div>
                         </div>
                         <a href="#">Forgot Password?</a>
