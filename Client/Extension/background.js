@@ -87,15 +87,17 @@ function flip_user_status(signIn,user_info){
 async function callCarbonAPI(details) {
     if (details.type === "main_frame") {
         if(details.url!='chrome-extension://*/*'){
-
-            console.log(details.url);
+            chrome.storage.local.get(['userStatus','user_info'], async function (response) {
+                console.log(response.user_info);
                 await fetch('https://carboninsight-backend.onrender.com/api/v1/carbonInsight/tabInfo', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         url: details.url,
+                        userEmail:response.user_info.email
                     })
                 })
+            })
         }
     }
     return {};

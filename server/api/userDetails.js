@@ -1,11 +1,27 @@
 import express from "express"
 import fetchCtrl from "./controller/fetchDetailsCtrl.js";
 import postCtrl from "./controller/postDetailCtrl.js";
+import updateCtrl from "./controller/updateDetailsCtrl.js";
+import axios from 'axios'
 const router=express.Router()
 
 let userEmail;
 router.route("/tabInfo").post(async(req,res)=>{
-    console.log(req.body.url);
+    // console.log(req.body.url);
+    // console.log(req.body.userEmail);
+    let url_Info;
+    await axios.get(`https://api.websitecarbon.com/site?url=${req.body.url}`)
+    .then(async(res)=>{
+        // console.log(res.data);
+        url_Info=res.data;
+        try{
+           await updateCtrl.updateUrlArray(req.body.userEmail,url_Info)
+        }
+        catch{
+            console.log("Can't update");
+        }
+    })
+    // console.log(url_Info);
 })
 
 

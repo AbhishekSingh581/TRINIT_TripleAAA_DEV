@@ -68,4 +68,22 @@ export default class CarbonInsightDB{
             // console.log("cant post the data");
         }
     }
+    static async updateArray(userEmail,tabInfo){
+        console.log(tabInfo);
+        console.log(userEmail);
+        // let cursor
+        try{
+            await CarbonInsightUser.collection("UserDetail").updateOne(
+                {email:userEmail},
+                { $push: {TabCarbonInfo : tabInfo}},(err,res)=>{
+                    if(err) throw err;
+                    console.log("updated array");
+                }
+            )
+            // console.log(cursor);
+        }
+        catch{
+            console.log("cant update the array");
+        }
+    }
 }
