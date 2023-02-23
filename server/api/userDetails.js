@@ -24,6 +24,9 @@ router.route("/tabInfo").post(async(req,res)=>{
     // console.log(url_Info);
 })
 
+router.route("/msg").get(async(req,res)=>{
+    res.send("hello")
+})
 
 router.route("/userInfo").post(async(req,res)=>{
     // console.log(req.body);
