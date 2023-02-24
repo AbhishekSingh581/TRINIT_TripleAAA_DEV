@@ -5,9 +5,14 @@ const SideBar = () => {
     const SideBardisappear=()=>{
         document.getElementById('sideBar').classList.remove('sideMenuAppear');
     }
+    const logOut=()=>{
+        localStorage.clear();
+        window.location.reload();
+    }
   return (
     <div id='sideBar' className='sideBar-container'>
       hello1 <button onClick={SideBardisappear} id="closeSideBar"><CloseIcon/></button>
+      <button onClick={logOut}>LogOut</button>
     </div>
   )
 }
