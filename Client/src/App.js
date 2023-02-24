@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import { Navigate } from 'react-router-dom';
 import AppWrapper from './Pages/AppWrapper';
+import DashBoard from './Pages/DashBoard';
 function App() {
   const getEmail=localStorage.getItem('emailData');
   const getPassword=localStorage.getItem('passwordData');
@@ -18,6 +19,7 @@ function App() {
     } />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<DashBoard/>}/>
     </Routes>
   </BrowserRouter>
   );

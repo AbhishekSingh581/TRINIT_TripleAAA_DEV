@@ -9,7 +9,7 @@ class AppWrapper extends Component{
       const getEmail=localStorage.getItem('emailData');
       const getPassword=localStorage.getItem('passwordData');
         if(getEmail&& getPassword)
-            return <Navigate to="/login" />
+            return <Navigate to="/dashboard" />
 
    return(
        <HomePage/>

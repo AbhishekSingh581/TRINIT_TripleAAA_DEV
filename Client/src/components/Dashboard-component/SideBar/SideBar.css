@@ -1,0 +1,30 @@
+#sideBar{
+    width: 20%;
+    transition: all 0.65s;
+    -webkit-transition: all 0.65s;
+    background: rgb(56, 227, 150);
+    box-shadow: rgba(0, 0, 0, 0.74) 0px 3px 8px;
+}
+#closeSideBar{
+    position: absolute;
+    right: 0%;
+}
+@media (max-width:750px) {
+    #sideBar{
+        width: 100%;
+        left: -100%;
+        position: absolute;
+        height: 100%;
+        /* display: none; */
+        transition: all 0.65s;
+        -webkit-transition: all 0.65s;
+    }
+    #sideBar.sideMenuAppear{
+        left: 0;
+    }
+}
+@media (min-width:750px) {
+    #closeSideBar{
+        display: none;
+    }
+}

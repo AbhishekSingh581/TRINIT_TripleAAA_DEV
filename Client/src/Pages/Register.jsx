@@ -56,7 +56,7 @@ const Register = (props) => {
                     <img src={BG} />
                 </div>
                 <div class="login-content">
-                    <form id="registrationForm" method="get" action="/" onSubmit={registration}>
+                    <form id="registrationForm" method="get" action="/dashboard" onSubmit={registration}>
                         <h2 class="title">Welcome</h2>
                         <div class="input-div one">
                         <div class="i">

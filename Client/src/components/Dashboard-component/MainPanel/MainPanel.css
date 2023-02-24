@@ -1,0 +1,8 @@
+#Mainpanel-container{
+    width: 80%;
+}
+@media (max-width:750px) {
+    #Mainpanel-container{
+        width: 100%;
+    }
+}

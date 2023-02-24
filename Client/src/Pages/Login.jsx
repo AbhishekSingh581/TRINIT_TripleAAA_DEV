@@ -47,7 +47,7 @@ const Login = (props) => {
                     <img src={BG} />
                 </div>
                 <div class="login-content">
-                    <form id="loginForm" action="/" onSubmit={loginToDashBoard}>
+                    <form id="loginForm" action="/dashboard" onSubmit={loginToDashBoard}>
                         <h2 class="title">Welcome</h2>
                         <div class="input-div one">
                         <div class="i">
