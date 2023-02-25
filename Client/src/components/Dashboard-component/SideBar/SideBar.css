@@ -5,6 +5,7 @@
     background: #00203fff;
     box-shadow: rgba(0, 0, 0, 0.74) 0px 3px 8px;
     position: relative;
+    z-index: 9;
 }
 #logOutBtn{
     width: 100%;
@@ -58,7 +59,7 @@
 }
 .activeBtn{
     color: #ACE1AF;
-    background: rgb(19, 65, 112);
+    background: #134170;
 }
 @media (max-width:750px) {
     #sideBar{

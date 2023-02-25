@@ -2,13 +2,31 @@
     width: 95%;
     /* border: 1px solid red; */
     overflow: auto;
-    background: #ACE1AF;
+    background: #001224;
+    padding: 2%;
+    display: flex;
 }
 .mainPanel-div{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+}
+.leftsideOfPanel{
+    /* border: 1px solid green; */
+}
+.cardsFlex{
+    display: flex;
+    /* border: 1px solid red; */
+    gap: 1rem;
+    width: fit-content;
 }
 @media (max-width:750px) {
     #Mainpanel-container{
         width: 100%;
+        padding: 15% 0%;
+        display: block;
     }
+    .cardsFlex{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }   
 }

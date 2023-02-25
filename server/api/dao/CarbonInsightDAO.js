@@ -86,4 +86,25 @@ export default class CarbonInsightDB{
             console.log("cant update the array");
         }
     }
+    static async getUserDataForDashBoard(email){
+        let cursor
+        try{
+            // console.log(creds[0],creds[1]);
+            // console.log(typeof(creds[0]),typeof(creds[1]));
+            cursor=await CarbonInsightUser.collection("UserDetail").find({"email":email})
+            // console.log(cursor);
+        }
+        catch{
+            console.log("cant get the data");
+            return []
+        }
+        try{
+            const feedsList=await cursor.toArray()
+            // console.log(feedsList);
+            return feedsList
+        }
+        catch{
+            console.log("cant make it an array");
+        }
+    }
 }

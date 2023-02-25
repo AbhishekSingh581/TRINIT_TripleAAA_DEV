@@ -6,6 +6,8 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
+
 const SideBar = (props) => {
     // console.log(props.activeVar[0]);
     const [activeMenuItem,setActiveMenuItem]=useState(props.activeVar)
@@ -14,8 +16,7 @@ const SideBar = (props) => {
     }
     const logOut=()=>{
         localStorage.clear();
-        window.location.reload();
-    }
+      }
     // console.log(activeMenuItem);
   return (
     <div id='sideBar' className='sideBar-container'>
@@ -31,7 +32,7 @@ const SideBar = (props) => {
         </div>
       </div>
       <button onClick={SideBardisappear} id="closeSideBar"><CloseIcon/></button>
-      <button id='logOutBtn' onClick={logOut}><LogoutIcon/></button>
+      <Link to='/'><button id='logOutBtn'  onClick={logOut}><LogoutIcon/></button></Link>
     </div>
   )
 }

@@ -119,4 +119,10 @@ router.route('/getLogin').post(authenticate_user,async(req,res)=>{
     res.status(200).end();
 })
 
+router.route(`/getUserData/:email`).get(async(req,res)=>{
+    // console.log(req.params.email);
+    const data=await fetchCtrl.getUserData(req.params.email)
+    res.send(data)
+})
+
 export default router

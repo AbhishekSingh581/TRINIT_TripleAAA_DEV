@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import axios from 'axios'
 import './DashBoard.css'
 import SideBar from '../components/Dashboard-component/SideBar/SideBar'
 import MainPanel from '../components/Dashboard-component/MainPanel/MainPanel'
@@ -10,6 +11,21 @@ const DashBoard = () => {
         document.getElementById('sideBar').classList.add('sideMenuAppear');
     }
     // console.log(active);
+    const [userData,setUserData]=useState({})
+    const userEmail=localStorage.getItem('emailData')
+    useEffect(()=>{
+      async function fetchData(){
+        await axios.get(`https://carboninsight-backend.onrender.com/api/v1/carbonInsight/getUserData/${userEmail}`)
+        .then((res)=>{
+          // console.log(res.data);
+          setUserData(res.data[0])
+        }).catch((err)=>{
+          console.log(err);
+        })  
+      }
+      fetchData()
+    },[])
+    // console.log(userData);
   return (
     <div id='dashBoard-container'>
       <div className="headerTitle">
@@ -20,7 +36,8 @@ const DashBoard = () => {
       </div>
       <div className="dashBoardGrid">
         <SideBar stateFunc={setActive} activeVar={active}/>
-        <MainPanel/>
+        <MainPanel data={userData}/>  
+        {/* data={userData} */}
       </div>
     </div>
   )
