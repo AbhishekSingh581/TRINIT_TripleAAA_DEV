@@ -34,6 +34,7 @@ const MainPanel = (props) => {
             <Card title="Total Energy" figure={totalEnergyRelease.toFixed(4)} icon={<ElectricBoltIcon className='iconInCard' sx={{ fontSize: "80px" }}/>} sub_desc="in KWg."/>
         </div>
       </div>
+
     </div>
   )
 }
