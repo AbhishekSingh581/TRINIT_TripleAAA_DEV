@@ -33,6 +33,18 @@ const MainPanel = (props) => {
             <Card title="Today's CO2 Footprint" figure={todayCarbonFootPrint.toFixed(4)} sub_desc="in grams" icon={<Co2Icon className='iconInCard' sx={{ fontSize: "80px" }}/>} />
             <Card title="Total Energy" figure={totalEnergyRelease.toFixed(4)} icon={<ElectricBoltIcon className='iconInCard' sx={{ fontSize: "80px" }}/>} sub_desc="in KWg."/>
         </div>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+        <h1>hello</h1>
+
       </div>
 
     </div>
