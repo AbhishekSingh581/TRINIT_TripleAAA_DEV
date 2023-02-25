@@ -3,7 +3,7 @@ import './MainPanel.css'
 const MainPanel = () => {
   return (
     <div id='Mainpanel-container'>
-      hello2
+      
     </div>
   )
 }

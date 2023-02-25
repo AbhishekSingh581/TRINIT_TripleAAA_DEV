@@ -1,12 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import './DashBoard.css'
 import SideBar from '../components/Dashboard-component/SideBar/SideBar'
 import MainPanel from '../components/Dashboard-component/MainPanel/MainPanel'
 import MenuIcon from '@mui/icons-material/Menu';
 const DashBoard = () => {
+  const [active,setActive]=useState([true,false,false])
     const SideMenu=()=>{
         document.getElementById('sideBar').classList.add('sideMenuAppear');
     }
+    // console.log(active);
   return (
     <div id='dashBoard-container'>
       <div className="headerTitle">
@@ -16,7 +19,7 @@ const DashBoard = () => {
         </div>
       </div>
       <div className="dashBoardGrid">
-        <SideBar/>
+        <SideBar stateFunc={setActive} activeVar={active}/>
         <MainPanel/>
       </div>
     </div>

@@ -1,5 +1,11 @@
 #Mainpanel-container{
-    width: 80%;
+    width: 95%;
+    /* border: 1px solid red; */
+    overflow: auto;
+    background: #ACE1AF;
+}
+.mainPanel-div{
+    border: 1px solid blue;
 }
 @media (max-width:750px) {
     #Mainpanel-container{

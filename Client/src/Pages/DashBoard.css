@@ -4,7 +4,7 @@
 }
 .headerTitle{
     background: #1b1b1b;
-    padding: 0.5%;
+    padding: 0.2%;
     box-shadow: rgba(0, 0, 0, 0.74) 0px 3px 8px;
     height: 10%;
     display: flex;
@@ -26,17 +26,19 @@
 }
 .dashBoardGrid{
     /* border: 1px solid red; */
-    height: 90%;
+    /* height: 90%; */
     display: flex;
+    height: 90%;
 }
+
 .dashBoardGrid div{
     /* border: 1px solid blue; */
 }
 
 #menuBtn{
-    background: #1b1b1b;
     border-style: none;
-
+    background: transparent;
+    border-style: none;
 }
 
 @media (max-width:480px) {
